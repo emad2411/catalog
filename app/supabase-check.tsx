@@ -9,7 +9,7 @@ export default async function SupabaseCheck() {
 
   const { data, error, count } = await supabase
     .from("products")
-    .select("id, title, brand", { count: "exact" })
+    .select("id, title, price, sku", { count: "exact" })
     .limit(3);
 
   if (error) {
@@ -29,7 +29,7 @@ export default async function SupabaseCheck() {
         {data?.map((p) => (
           <li key={p.id}>
             <span className="text-foreground">{p.title}</span>
-            {p.brand ? <span className="ml-2 text-mute">({p.brand})</span> : null}
+            {p.price ? <span className="ml-2 text-mute">${p.price}</span> : null}
           </li>
         ))}
       </ul>
