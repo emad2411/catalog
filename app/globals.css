@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* === Voltagent design tokens (DESIGN.md) ===
+   Source: getdesign add voltagent
+   Dark canvas, electric-green accent, Inter typography.
+   Tokens are exposed as :root CSS variables so shadcn components inherit them
+   automatically via their existing @theme inline aliases (no component changes).
+*/
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -48,73 +54,89 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Voltagent is dark by design — apply the dark tokens to :root directly.
+   .dark is kept as a no-op so future light-mode work is a single block flip. */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* surfaces */
+  --background: oklch(0.173 0 89.9);          /* #101010 canvas */
+  --foreground: oklch(0.961 0 89.9);          /* #f2f2f2 ink */
+  --card: oklch(0.218 0 89.9);                /* #1a1a1a canvas-soft */
+  --card-foreground: oklch(0.961 0 89.9);     /* ink */
+  --popover: oklch(0.218 0 89.9);             /* canvas-soft */
+  --popover-foreground: oklch(0.961 0 89.9);  /* ink */
+
+  /* brand */
+  --primary: oklch(0.782 0.175 160.8);        /* #00d992 electric green */
+  --primary-foreground: oklch(0.173 0 89.9);  /* #101010 on-primary */
+
+  /* secondary / muted / accent — all variations of canvas-soft + body text */
+  --secondary: oklch(0.218 0 89.9);           /* canvas-soft */
+  --secondary-foreground: oklch(0.798 0 89.9); /* #bdbdbd body */
+  --muted: oklch(0.218 0 89.9);               /* canvas-soft */
+  --muted-foreground: oklch(0.798 0 89.9);    /* body */
+  --accent: oklch(0.218 0 89.9);              /* canvas-soft */
+  --accent-foreground: oklch(0.961 0 89.9);   /* ink */
+
+  /* destructive stays red — Voltagent doesn't define a destructive color */
+  --destructive: oklch(0.704 0.191 22.216);
+
+  /* lines + focus */
+  --border: oklch(0.351 0.005 39.4 / 100%);   /* #3d3a39 hairline */
+  --input: oklch(0.351 0.005 39.4 / 100%);    /* hairline */
+  --ring: oklch(0.782 0.175 160.8);           /* primary */
+
+  /* charts: Voltagent monochrome scale anchored on hairline + body */
+  --chart-1: oklch(0.782 0.175 160.8);        /* primary */
+  --chart-2: oklch(0.696 0.149 162.5);        /* primary-deep */
+  --chart-3: oklch(0.798 0 89.9);             /* body */
+  --chart-4: oklch(0.662 0.018 250.9);        /* mute */
+  --chart-5: oklch(0.351 0.005 39.4);         /* hairline */
+
+  --radius: 0.5rem;                            /* Voltagent rounded.md = 8px */
+
+  --sidebar: oklch(0.218 0 89.9);              /* canvas-soft */
+  --sidebar-foreground: oklch(0.961 0 89.9);  /* ink */
+  --sidebar-primary: oklch(0.782 0.175 160.8); /* primary */
+  --sidebar-primary-foreground: oklch(0.173 0 89.9);
+  --sidebar-accent: oklch(0.218 0 89.9);
+  --sidebar-accent-foreground: oklch(0.961 0 89.9);
+  --sidebar-border: oklch(0.351 0.005 39.4);
+  --sidebar-ring: oklch(0.782 0.175 160.8);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* identical to :root — Voltagent is dark-only */
+  --background: oklch(0.173 0 89.9);
+  --foreground: oklch(0.961 0 89.9);
+  --card: oklch(0.218 0 89.9);
+  --card-foreground: oklch(0.961 0 89.9);
+  --popover: oklch(0.218 0 89.9);
+  --popover-foreground: oklch(0.961 0 89.9);
+  --primary: oklch(0.782 0.175 160.8);
+  --primary-foreground: oklch(0.173 0 89.9);
+  --secondary: oklch(0.218 0 89.9);
+  --secondary-foreground: oklch(0.798 0 89.9);
+  --muted: oklch(0.218 0 89.9);
+  --muted-foreground: oklch(0.798 0 89.9);
+  --accent: oklch(0.218 0 89.9);
+  --accent-foreground: oklch(0.961 0 89.9);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: oklch(0.351 0.005 39.4);
+  --input: oklch(0.351 0.005 39.4);
+  --ring: oklch(0.782 0.175 160.8);
+  --chart-1: oklch(0.782 0.175 160.8);
+  --chart-2: oklch(0.696 0.149 162.5);
+  --chart-3: oklch(0.798 0 89.9);
+  --chart-4: oklch(0.662 0.018 250.9);
+  --chart-5: oklch(0.351 0.005 39.4);
+  --sidebar: oklch(0.218 0 89.9);
+  --sidebar-foreground: oklch(0.961 0 89.9);
+  --sidebar-primary: oklch(0.782 0.175 160.8);
+  --sidebar-primary-foreground: oklch(0.173 0 89.9);
+  --sidebar-accent: oklch(0.218 0 89.9);
+  --sidebar-accent-foreground: oklch(0.961 0 89.9);
+  --sidebar-border: oklch(0.351 0.005 39.4);
+  --sidebar-ring: oklch(0.782 0.175 160.8);
 }
 
 @layer base {
