@@ -200,7 +200,7 @@ export default function LogoShapesPage() {
         <span className="text-muted-foreground">
           Pick a shape and a style (Symbol + Text OR Pure Symbol).
         </span>
-      </div
+      </div>
     </div>
   );
 }
