@@ -8,6 +8,9 @@ export default function Home() {
     <main className="flex flex-1 items-center justify-center p-8">
       <Card className="w-full max-w-md">
         <CardHeader>
+          <div className="flex flex-col items-center gap-4 mb-4">
+            <img src="/logo.svg" alt="disquote logo" width={120} height={40} className="h-10 w-auto" />
+          </div>
           <div className="flex items-center justify-between">
             <CardTitle>Catalog</CardTitle>
             <Badge variant="secondary">shadcn ✓</Badge>

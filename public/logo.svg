@@ -1,0 +1,31 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    Brand: disquote
+    Identity: "Quote going down"
+    Colors: 
+    - Emerald Teal: #00D4A8
+    - Canvas: #0B0F14
+    - Ink: #E8ECF1
+  -->
+  <defs>
+    <style>
+      .text { font: 600 24px 'Inter', sans-serif; fill: #E8ECF1; }
+      .accent { fill: #00D4A8; }
+    </style>
+  </defs>
+  
+  <!-- The 'q' with the downward arrow tail -->
+  <g transform="translate(0, 4)">
+    <!-- The circle of the Q -->
+    <path d="M18 6 A 8 8 0 1 1 17.9 6" fill="none" stroke="#E8ECF1" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- The diagonal downward arrow tail (The Brand Mark) -->
+    <path d="M22 14 L 28 22" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" />
+    <path d="M28 22 L 25 22 M 28 22 L 28 19" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Wordmark: disquote -->
+    <text x="35" y="18" class="text">
+      dis<tspan class="accent">q</tspan>uote
+    </text>
+  </g>
+</svg>
