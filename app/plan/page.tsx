@@ -222,8 +222,7 @@ export default function PlanPage() {
               </ul>
             </section>
           )})}
-        </div
-      </footer>
-    </div
+      </div>
+    </div>
   );
 }
