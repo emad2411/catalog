@@ -1,12 +1,4 @@
-<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
-  <!-- 
-    Brand: disquote
-    Identity: "Quote going down"
-    Colors: 
-    - Emerald Teal: #00D4A8
-    - Canvas: #0B0F14
-    - Ink: #E8ECF1
-  -->
+<svg width="160" height="50" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .text { font: 600 24px 'Inter', sans-serif; fill: #E8ECF1; }
@@ -14,18 +6,22 @@
     </style>
   </defs>
   
-  <!-- The 'q' with the downward arrow tail -->
-  <g transform="translate(0, 4)">
-    <!-- The circle of the Q -->
-    <path d="M18 6 A 8 8 0 1 1 17.9 6" fill="none" stroke="#E8ECF1" stroke-width="3" stroke-linecap="round" />
+  <!-- Centered Group -->
+  <g transform="translate(10, 10)">
+    <!-- Wordmark: dis -->
+    <text x="0" y="20" class="text">dis</text>
     
-    <!-- The diagonal downward arrow tail (The Brand Mark) -->
-    <path d="M22 14 L 28 22" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" />
-    <path d="M28 22 L 25 22 M 28 22 L 28 19" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- The "q" Brand Mark -->
+    <!-- positioned to replace the 'q' visually -->
+    <g transform="translate(42, 0)">
+      <!-- Q Circle -->
+      <path d="M8 6 A 8 8 0 1 1 7.9 6" fill="none" stroke="#E8ECF1" stroke-width="3" stroke-linecap="round" />
+      <!-- Arrow Tail (The "Quote Going Down" mark) -->
+      <path d="M14 14 L 20 22" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" />
+      <path d="M20 22 L 17 22 M 20 22 L 20 19" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
     
-    <!-- Wordmark: disquote -->
-    <text x="35" y="18" class="text">
-      dis<tspan class="accent">q</tspan>uote
-    </text>
+    <!-- Wordmark: uote -->
+    <text x="68" y="20" class="text">uote</text>
   </g>
 </svg>
