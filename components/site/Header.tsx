@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Menu } from "lucide-react";
 
 import { Logo } from "@/components/site/Logo";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,7 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <header className="sticky top-0 z-50 h-16 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
@@ -52,18 +54,19 @@ export function Header() {
           >
             Sign in
           </Link>
-          <Button asChild size="sm">
-            <Link href="/quote">Request Quote</Link>
+          <Button size="sm" onClick={() => router.push("/quote")}>
+            Request Quote
           </Button>
         </div>
 
         {/* Mobile menu */}
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+            <SheetTrigger>
+              <div className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg hover:bg-muted">
                 <Menu className="size-5" />
-              </Button>
+                <span className="sr-only">Open menu</span>
+              </div>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <SheetHeader>
@@ -96,10 +99,14 @@ export function Header() {
                     Sign in
                   </Link>
                 </nav>
-                <Button asChild className="mt-2 w-full">
-                  <Link href="/quote" onClick={() => setOpen(false)}>
-                    Request Quote
-                  </Link>
+                <Button
+                  className="mt-2 w-full"
+                  onClick={() => {
+                    setOpen(false);
+                    router.push("/quote");
+                  }}
+                >
+                  Request Quote
                 </Button>
               </div>
             </SheetContent>
