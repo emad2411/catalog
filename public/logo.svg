@@ -2,7 +2,6 @@
   <defs>
     <style>
       .text { font: 600 24px 'Inter', sans-serif; fill: #E8ECF1; }
-      .accent { fill: #00D4A8; }
     </style>
   </defs>
   
@@ -11,9 +10,9 @@
     <!-- Wordmark: dis -->
     <text x="0" y="20" class="text">dis</text>
     
-    <!-- The "q" Brand Mark -->
-    <!-- positioned to replace the 'q' visually -->
-    <g transform="translate(42, 0)">
+    <!-- The "q" Brand Mark (Stand-alone icon) -->
+    <!-- Positioned exactly between the two words -->
+    <g transform="translate(35, 0)">
       <!-- Q Circle -->
       <path d="M8 6 A 8 8 0 1 1 7.9 6" fill="none" stroke="#E8ECF1" stroke-width="3" stroke-linecap="round" />
       <!-- Arrow Tail (The "Quote Going Down" mark) -->
@@ -21,7 +20,7 @@
       <path d="M20 22 L 17 22 M 20 22 L 20 19" stroke="#00D4A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </g>
     
-    <!-- Wordmark: uote -->
-    <text x="68" y="20" class="text">uote</text>
+    <!-- Wordmark: quote -->
+    <text x="60" y="20" class="text">quote</text>
   </g>
 </svg>
