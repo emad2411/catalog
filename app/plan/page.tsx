@@ -24,7 +24,7 @@ const phases: Phase[] = [
       { id: "0.5", title: "Generate brand kit via Nano Banana (3×3 dark-product board, Q logo, competing quotes panel)", status: "done" },
       { id: "0.6", title: "Create components/site/Logo.tsx — Q mark (SVG: circle + emerald downward arrow tail) + 'disquote' wordmark", status: "done" },
       { id: "0.7", title: "Add shadcn components: input, label, textarea, sonner (toast), dropdown-menu, select, dialog, table, skeleton", status: "done" },
-      { id: "0.8", title: "Create components/site/Header.tsx — Logo + nav (Products, About, Contact, Sign in) + 'Request Quote' CTA", status: "todo" },
+      { id: "0.8", title: "Create components/site/Header.tsx — Logo + nav (Products, About, Contact, Sign in) + 'Request Quote' CTA", status: "done" },
       { id: "0.9", title: "Create components/site/Footer.tsx — company info, link columns (Products, Company, Legal), contact, copyright", status: "todo" },
       { id: "0.10", title: "Create components/site/Container.tsx — max-width wrapper used by every page", status: "todo" },
       { id: "0.11", title: "Wire Header + Footer into app/layout.tsx so every page gets them automatically", status: "todo" },
