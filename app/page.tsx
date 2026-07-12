@@ -1,3 +1,4 @@
+import { Logo } from "@/components/site/Logo"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -9,13 +10,13 @@ export default function Home() {
       <Card className="w-full max-w-md">
         <CardHeader>
           <div className="flex flex-col items-center gap-4 mb-4">
-            <img src="/logo.svg" alt="disquote logo" width={120} height={40} className="h-10 w-auto" />
+            <Logo className="h-12 w-auto" />
           </div>
           <div className="flex items-center justify-between">
-            <CardTitle>Catalog</CardTitle>
+            <CardTitle>disquote</CardTitle>
             <Badge variant="secondary">shadcn ✓</Badge>
           </div>
-          <CardDescription>Next.js 16 + Tailwind v4 + shadcn/ui</CardDescription>
+          <CardDescription>Quote-driven marketplace · Next.js 16 + Tailwind v4 + shadcn/ui</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           <SupabaseCheck />
