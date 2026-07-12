@@ -60,7 +60,7 @@ export function ComponentShowcase() {
         {/* Select */}
         <div className="space-y-2">
           <Label>Select</Label>
-          <Select value={selectValue} onValueChange={setSelectValue}>
+          <Select value={selectValue} onValueChange={(v) => setSelectValue(v ?? "")}>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Choose a category" />
             </SelectTrigger>
