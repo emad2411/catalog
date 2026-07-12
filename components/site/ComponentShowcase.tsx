@@ -77,8 +77,8 @@ export function ComponentShowcase() {
         <div className="space-y-2">
           <Label>Dropdown Menu</Label>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">Open menu</Button>
+            <DropdownMenuTrigger render={<Button variant="outline" />}>
+              Open menu
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -92,8 +92,8 @@ export function ComponentShowcase() {
         <div className="space-y-2">
           <Label>Dialog</Label>
           <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline">Open dialog</Button>
+            <DialogTrigger render={<Button variant="outline" />}>
+              Open dialog
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
