@@ -6,96 +6,98 @@ type LogoProps = {
 /**
  * disquote logo — "Ask once. Get the best price."
  *
- * The wordmark "disquote" is split: "dis" on the left, "uote" on the right.
- * The Q in the middle is a large emerald-teal circle with a downward arrow
- * tail — symbolising "quote going down." All letters are vertically aligned
- * with the circle's center.
+ * Wordmark: "dis" + big Q circle + "uote"
+ * Q circle is emerald-teal (#00D4A8) with a thick downward arrow tail
+ * ("quote going down"). Circle is noticeably larger than text x-height.
  *
- * Brand colours from DESIGN.md:
- *   circle + tail:  #00D4A8 (emerald-teal — primary)
- *   text:            currentColor (defaults to #E8ECF1 ink on dark canvas)
- *   font:            Inter 700, lowercase, tight tracking
+ * Geometry sourced from the specialized SVG model's design:
+ *   - Circle: r=50, stroke-width=17 (wordmark), r=30, stroke-width=11 (icon)
+ *   - Arrow: 45° diagonal exiting circle bottom-right with visible arrowhead
+ *   - Text: Inter 700, 92px, dominant-baseline central
+ *   - Colors: #00D4A8 circle/tail, #E8ECF1 text, on #0B0F14 canvas
  */
 export function Logo({ className, showText = true }: LogoProps) {
   const size = className ?? "h-10 w-auto";
 
   if (!showText) {
+    // Standalone Q icon (designed on 100×100 grid)
     return (
-      <svg viewBox="0 0 52 52" className={size} aria-label="disquote">
-        {/* Q circle */}
-        <circle cx="24" cy="22" r="16" fill="none" stroke="#00D4A8" strokeWidth="2.5" />
-        {/* Q tail — thick visible arrow exiting bottom-right */}
-        <path
-          d="M29 27 L42 40"
+      <svg viewBox="0 0 100 100" className={size} aria-label="disquote">
+        {/* Q circular ring */}
+        <circle
+          cx="46"
+          cy="46"
+          r="30"
+          fill="none"
           stroke="#00D4A8"
-          strokeWidth="3.5"
+          strokeWidth="11"
           strokeLinecap="round"
         />
-        {/* Arrowhead — larger, clearly visible */}
+        {/* Price-drop arrow — 45° diagonal, thick + visible */}
         <path
-          d="M35 40 L42 40 L42 33"
+          d="M 67 67 L 88 88 M 88 72 L 88 88 L 72 88"
+          fill="none"
           stroke="#00D4A8"
-          strokeWidth="3.5"
+          strokeWidth="11"
           strokeLinecap="round"
           strokeLinejoin="round"
-          fill="none"
         />
       </svg>
     );
   }
 
+  // Full wordmark: "dis" + [big Q circle] + "uote"
   return (
-    <svg viewBox="0 0 180 60" className={size} aria-label="disquote">
-      {/* "dis" — left half of wordmark */}
+    <svg viewBox="260 145 500 165" className={size} aria-label="disquote">
+      {/* Left segment: "dis" (right-aligned, ends at x=395) */}
       <text
-        x="2"
-        y="42"
+        x="395"
+        y="220"
+        textAnchor="end"
+        dominantBaseline="central"
         fontFamily="Inter, system-ui, sans-serif"
         fontWeight="700"
-        fontSize="36"
+        fontSize="92"
         letterSpacing="-0.9"
-        fill="currentColor"
+        fill="#E8ECF1"
       >
         dis
       </text>
 
-      {/* Big Q circle — centered in the middle of the word */}
-      <circle
-        cx="74"
-        cy="32"
-        r="16"
-        fill="none"
-        stroke="#00D4A8"
-        strokeWidth="2.5"
-      />
+      {/* Central Q: circle + downward arrow tail */}
+      <g transform="translate(421, 166)">
+        {/* Circle — noticeably larger than text x-height */}
+        <circle
+          cx="54"
+          cy="54"
+          r="50"
+          fill="none"
+          stroke="#00D4A8"
+          strokeWidth="17"
+          strokeLinecap="round"
+        />
+        {/* Diagonal down-right arrow — "quote going down" */}
+        <path
+          d="M 89 89 L 124 124 M 124 98 L 124 124 L 98 124"
+          fill="none"
+          stroke="#00D4A8"
+          strokeWidth="17"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
 
-      {/* Q arrow tail — "quote going down" (emerald-teal) */}
-      {/* Thick, clearly visible arrow exiting the circle bottom-right */}
-      <path
-        d="M79 37 L93 51"
-        stroke="#00D4A8"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      {/* Arrowhead — large, unmistakable */}
-      <path
-        d="M85 51 L93 51 L93 43"
-        stroke="#00D4A8"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-
-      {/* "uote" — right half of wordmark */}
+      {/* Right segment: "uote" (left-aligned, starts at x=560) */}
       <text
-        x="100"
-        y="42"
+        x="560"
+        y="220"
+        textAnchor="start"
+        dominantBaseline="central"
         fontFamily="Inter, system-ui, sans-serif"
         fontWeight="700"
-        fontSize="36"
+        fontSize="92"
         letterSpacing="-0.9"
-        fill="currentColor"
+        fill="#E8ECF1"
       >
         uote
       </text>
