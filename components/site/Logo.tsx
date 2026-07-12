@@ -15,36 +15,27 @@ type LogoProps = {
  *   circle + tail:  #00D4A8 (emerald-teal — primary)
  *   text:            currentColor (defaults to #E8ECF1 ink on dark canvas)
  *   font:            Inter 700, lowercase, tight tracking
- *
- * Geometry (viewBox 0 0 172 56):
- *   "dis" — x=2, width ~48px, ends at x≈50
- *   gap 8px → circle left edge at 58
- *   circle — cx=74, cy=32, r=16 (diameter 32; bigger than text cap height ~25
- *     but vertically centered on the text midline so it reads as a "big Q"
- *     encompassing the word, not floating below it)
- *   gap 8px → "uote" starts at x=98
- *   Q tail — crosses through circle bottom-right, exits with arrowhead
  */
 export function Logo({ className, showText = true }: LogoProps) {
   const size = className ?? "h-10 w-auto";
 
   if (!showText) {
     return (
-      <svg viewBox="0 0 48 48" className={size} aria-label="disquote">
+      <svg viewBox="0 0 52 52" className={size} aria-label="disquote">
         {/* Q circle */}
         <circle cx="24" cy="22" r="16" fill="none" stroke="#00D4A8" strokeWidth="2.5" />
-        {/* Q tail — starts inside circle, exits bottom-right */}
+        {/* Q tail — thick visible arrow exiting bottom-right */}
         <path
-          d="M30 28 L39 37"
+          d="M29 27 L42 40"
           stroke="#00D4A8"
-          strokeWidth="2.5"
+          strokeWidth="3.5"
           strokeLinecap="round"
         />
-        {/* Arrowhead pointing down-right */}
+        {/* Arrowhead — larger, clearly visible */}
         <path
-          d="M34 37 L39 37 L39 32"
+          d="M35 40 L42 40 L42 33"
           stroke="#00D4A8"
-          strokeWidth="2.5"
+          strokeWidth="3.5"
           strokeLinecap="round"
           strokeLinejoin="round"
           fill="none"
@@ -54,7 +45,7 @@ export function Logo({ className, showText = true }: LogoProps) {
   }
 
   return (
-    <svg viewBox="0 0 172 56" className={size} aria-label="disquote">
+    <svg viewBox="0 0 180 60" className={size} aria-label="disquote">
       {/* "dis" — left half of wordmark */}
       <text
         x="2"
@@ -69,9 +60,6 @@ export function Logo({ className, showText = true }: LogoProps) {
       </text>
 
       {/* Big Q circle — centered in the middle of the word */}
-      {/* cx=74: 8px gap after "dis" (which ends ~x58) */}
-      {/* cy=32: vertically centered on text midline (lowercase center ~y32) */}
-      {/* r=16: diameter 32 — "big Q" but proportionate to 36px text */}
       <circle
         cx="74"
         cy="32"
@@ -81,28 +69,27 @@ export function Logo({ className, showText = true }: LogoProps) {
         strokeWidth="2.5"
       />
 
-      {/* Q arrow tail — crosses through circle bottom-right, exits with arrowhead */}
-      {/* "quote going down" (emerald-teal) */}
+      {/* Q arrow tail — "quote going down" (emerald-teal) */}
+      {/* Thick, clearly visible arrow exiting the circle bottom-right */}
       <path
-        d="M80 38 L89 47"
+        d="M79 37 L93 51"
         stroke="#00D4A8"
-        strokeWidth="2.5"
+        strokeWidth="4"
         strokeLinecap="round"
       />
-      {/* Arrowhead pointing down-right */}
+      {/* Arrowhead — large, unmistakable */}
       <path
-        d="M84 47 L89 47 L89 42"
+        d="M85 51 L93 51 L93 43"
         stroke="#00D4A8"
-        strokeWidth="2.5"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
       />
 
       {/* "uote" — right half of wordmark */}
-      {/* x=98: 8px gap after circle right edge (cx+r = 90) */}
       <text
-        x="98"
+        x="100"
         y="42"
         fontFamily="Inter, system-ui, sans-serif"
         fontWeight="700"
