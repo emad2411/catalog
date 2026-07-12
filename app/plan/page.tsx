@@ -25,9 +25,9 @@ const phases: Phase[] = [
       { id: "0.6", title: "Create components/site/Logo.tsx — Q mark (SVG: circle + emerald downward arrow tail) + 'disquote' wordmark", status: "done" },
       { id: "0.7", title: "Add shadcn components: input, label, textarea, sonner (toast), dropdown-menu, select, dialog, table, skeleton", status: "done" },
       { id: "0.8", title: "Create components/site/Header.tsx — Logo + nav (Products, About, Contact, Sign in) + 'Request Quote' CTA", status: "done" },
-      { id: "0.9", title: "Create components/site/Footer.tsx — company info, link columns (Products, Company, Legal), contact, copyright", status: "todo" },
+      { id: "0.9", title: "Create components/site/Footer.tsx — company info, link columns (Products, Company, Legal), contact, copyright", status: "done" },
       { id: "0.10", title: "Create components/site/Container.tsx — max-width wrapper used by every page", status: "todo" },
-      { id: "0.11", title: "Wire Header + Footer into app/layout.tsx so every page gets them automatically", status: "todo" },
+      { id: "0.11", title: "Wire Header + Footer into app/layout.tsx so every page gets them automatically", status: "done" },
       { id: "0.12", title: "Update / homepage to a real landing page (hero: 'Ask once. Get the best price.' + Q logo + CTA → /products + how it works)", status: "todo" },
       { id: "0.13", title: "Create app/about/page.tsx — company story placeholder", status: "todo" },
       { id: "0.14", title: "Create app/contact/page.tsx — contact info + simple form (wired in Phase 4)", status: "todo" },
@@ -110,7 +110,7 @@ const phases: Phase[] = [
       { id: "5.1", title: "Wire /auth/login — real form using Supabase Auth signInWithPassword()", status: "todo" },
       { id: "5.2", title: "Wire /auth/register — real form with signUp() + email verification", status: "todo" },
       { id: "5.3", title: "Add /auth/logout — sign out route", status: "todo" },
-      { id: "5.4", title: "Create lib/auth.ts — getServerSession() + requireAdmin() guard pattern", status: "todo" },
+      { id: "5.4", title: "Create lib/auth.ts — getServerSession() + requireAuth() guard pattern", status: "todo" },
       { id: "5.5", title: "Add proxy.ts (Next 16 replaces middleware.ts) to protect /quotes and /admin routes", status: "todo" },
       { id: "5.6", title: "Wire /quotes — customer sees their own quote_requests (RLS enforced)", status: "todo" },
       { id: "5.7", title: "Verify: register, log in, see own quotes only, log out", status: "todo" },
@@ -221,15 +221,9 @@ export default function PlanPage() {
                 ))}
               </ul>
             </section>
-          );
-        })}
-      </div>
-
-      <footer className="mt-12 border-t border-border pt-6 text-xs text-muted-foreground">
-        Edit <code className="rounded bg-muted px-1">app/plan/page.tsx</code> to
-        flip a step from <code>todo</code> to <code>done</code>. Phases are ordered —
-        each one depends on the previous.
+          )})}
+        </div
       </footer>
-    </div>
+    </div
   );
 }

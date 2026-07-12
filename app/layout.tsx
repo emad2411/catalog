@@ -1,7 +1,8 @@
+import { Footer } from "@/components/site/Footer";
+import { Header } from "@/components/site/Header";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/site/Header";
 
 // disquote design language: Inter for display + body, JetBrains Mono for prices + data.
 // See DESIGN.md for the full typography hierarchy.
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
