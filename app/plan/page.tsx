@@ -22,7 +22,7 @@ const phases: Phase[] = [
       { id: "0.3", title: "Rebrand DESIGN.md — disquote palette (navy-black, emerald-teal, amber, red), JetBrains Mono, marketplace components", status: "done" },
       { id: "0.4", title: "Rebrand globals.css — all CSS variables remapped to disquote oklch tokens + new --brand-* tokens", status: "done" },
       { id: "0.5", title: "Generate brand kit via Nano Banana (3×3 dark-product board, Q logo, competing quotes panel)", status: "done" },
-      { id: "0.6", title: "Create components/site/Logo.tsx — Q mark (SVG: circle + emerald downward arrow tail) + 'disquote' wordmark", status: "todo" },
+      { id: "0.6", title: "Create components/site/Logo.tsx — Q mark (SVG: circle + emerald downward arrow tail) + 'disquote' wordmark", status: "done" },
       { id: "0.7", title: "Add shadcn components: input, label, textarea, sonner (toast), dropdown-menu, select, dialog, table, skeleton", status: "todo" },
       { id: "0.8", title: "Create components/site/Header.tsx — Logo + nav (Products, About, Contact, Sign in) + 'Request Quote' CTA", status: "todo" },
       { id: "0.9", title: "Create components/site/Footer.tsx — company info, link columns (Products, Company, Legal), contact, copyright", status: "todo" },
