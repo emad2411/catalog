@@ -26,7 +26,7 @@ const phases: Phase[] = [
       { id: "0.7", title: "Add shadcn components: input, label, textarea, sonner (toast), dropdown-menu, select, dialog, table, skeleton", status: "done" },
       { id: "0.8", title: "Create components/site/Header.tsx — Logo + nav (Products, About, Contact, Sign in) + 'Request Quote' CTA", status: "done" },
       { id: "0.9", title: "Create components/site/Footer.tsx — company info, link columns (Products, Company, Legal), contact, copyright", status: "done" },
-      { id: "0.10", title: "Create components/site/Container.tsx — max-width wrapper used by every page", status: "todo" },
+      { id: "0.10", title: "Create components/site/Container.tsx — max-width wrapper used by every page", status: "done" },
       { id: "0.11", title: "Wire Header + Footer into app/layout.tsx so every page gets them automatically", status: "done" },
       { id: "0.12", title: "Update / homepage to a real landing page (hero: 'Ask once. Get the best price.' + Q logo + CTA → /products + how it works)", status: "todo" },
       { id: "0.13", title: "Create app/about/page.tsx — company story placeholder", status: "todo" },
