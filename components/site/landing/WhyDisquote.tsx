@@ -40,7 +40,7 @@ export function WhyDisquote() {
   return (
     <section className="border-b border-border/40 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-10 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Why disquote
         </h2>
 

@@ -42,10 +42,11 @@ export function Hero() {
 
       <div className="mx-auto flex min-h-[85dvh] max-w-7xl flex-col items-center justify-center gap-12 px-4 py-16 sm:px-6 lg:flex-row lg:gap-8 lg:px-8">
         {/* === LEFT: copy === */}
-        <div className="flex flex-1 flex-col gap-5 lg:max-w-xl">
+        <div className="flex w-full flex-col items-center gap-5 text-center lg:max-w-xl lg:items-start lg:text-left">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex justify-center lg:justify-start"
           >
             <Badge variant="outline" className="border-border/60 text-brand-body">
               Quote-driven marketplace
@@ -55,7 +56,7 @@ export function Hero() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="text-center text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-left lg:text-6xl"
           >
             Ask once.
             <br />
@@ -65,7 +66,7 @@ export function Hero() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-[65ch] text-lg leading-relaxed text-muted-foreground"
+            className="mx-auto max-w-[65ch] text-center text-lg leading-relaxed text-muted-foreground lg:text-left"
           >
             Submit a single request for the gear you want. Verified sellers
             compete on price. You pick the lowest quote.
@@ -74,7 +75,7 @@ export function Hero() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-3 sm:flex-row"
+            className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
           >
             <Link href="/quote">
               <Button size="lg" className="h-11 px-6 text-base">
@@ -99,7 +100,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex-1 lg:max-w-md"
+          className="w-full lg:flex-1 lg:max-w-md"
         >
           <QuoteComparisonPreviewCard sellers={sellers} />
         </motion.div>
