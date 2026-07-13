@@ -208,3 +208,26 @@
     @apply font-sans;
   }
 }
+
+/* Gentle continuous float for the hero product-preview card.
+   Calm ease-in-out yoyo on translateY only (GPU-cheap). Collapses to
+   static under prefers-reduced-motion per the design-system guardrail. */
+@layer components {
+  @keyframes hero-card-float {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-6px);
+    }
+  }
+  .hero-card-float {
+    animation: hero-card-float 4s ease-in-out infinite alternate;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card-float {
+    animation: none;
+  }
+}

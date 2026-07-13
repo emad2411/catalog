@@ -31,6 +31,20 @@ export default function RootLayout({
       lang="en"
       className={`dark ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* CSS safety net: if Motion's JS doesn't hydrate within 2.5s,
+            force all elements with inline opacity:0 to become visible.
+            Prevents invisible content through proxies like ngrok
+            where JS hydration may be delayed or blocked. */}
+        <style>{`
+          @keyframes motion-safety-net {
+            to { opacity: 1 !important; transform: none !important; }
+          }
+          [style*="opacity:0"] {
+            animation: motion-safety-net 0.1s 2.5s forwards;
+          }
+        `}</style>
+      </head>
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
