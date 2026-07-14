@@ -45,7 +45,8 @@ const phases: Phase[] = [
       { id: "0.19", title: "Create app/quotes/page.tsx — customer's quote requests placeholder (real data in Phase 4)", status: "done" },
       { id: "0.20", title: "Add app/not-found.tsx — global 404 page with link back to /", status: "done" },
       { id: "0.21", title: "Remove old /logo-preview and /logo-shapes pages (replaced by Logo component)", status: "done" },
-      { id: "0.22", title: "Verify live: every nav link returns 200, no 404s, disquote design is consistent across all pages", status: "todo" },
+      { id: "0.22", title: "Verify live: every nav link returns 200, no 404s, disquote design is consistent across all pages", status: "done" },
+      { id: "0.23", title: "Create app/quote/page.tsx + app/products/page.tsx placeholders so primary CTAs stop 404ing (real /quote in Phase 4, real /products in Phase 2)", status: "done" },
     ],
   },
   {
