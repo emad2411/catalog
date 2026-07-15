@@ -1,18 +1,22 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 /**
- * Client-only interactive button. Isolated so the 404 page itself can stay
- * a Server Component. Navigation is programmatic (useRouter) because the
- * shadcn Button has no `asChild` (Base UI) — it can't wrap a <Link>.
+ * Client component — required because Base UI's `render` function form is a
+ * function, and Base UI's Button is a client component (functions can't cross
+ * the server→client boundary). This is the Base UI equivalent of Radix's
+ * `asChild`: the function spreads the button's props onto <Link>, producing a
+ * single styled <a href="/">. The 404 page itself stays a Server Component.
  */
 export function ReturnHomeButton() {
-  const router = useRouter();
-
   return (
-    <Button size="lg" className="mt-8 px-6" onClick={() => router.push("/")}>
+    <Button
+      size="lg"
+      className="mt-8 px-6"
+      render={(props) => <Link {...props} href="/" />}
+    >
       Return Home
     </Button>
   );
