@@ -58,7 +58,7 @@ const phases: Phase[] = [
       { id: "1.2", title: "Create lib/env.ts — throws at boot if NEXT_PUBLIC_SUPABASE_URL or ANON_KEY are missing", status: "done" },
       { id: "1.3", title: "Create lib/supabase/server.ts — server-side client (reads cookies, used in server components)", status: "done" },
       { id: "1.4", title: "Create lib/supabase/client.ts — browser client (used in client components)", status: "done" },
-      { id: "1.5", title: "Set up Supabase migrations: supabase init, link project (Product Selector), db pull to baseline existing schema (11 tables, RLS, policies)", status: "todo" },
+      { id: "1.5", title: "Set up Supabase migrations: supabase init, link project (Product Selector), baseline existing schema to migration (11 tables, RLS, policies — written manually from live schema, verified via pglast)", status: "done" },
       { id: "1.6", title: "Generate TypeScript types from live Supabase schema (supabase gen types typescript)", status: "todo" },
       { id: "1.7", title: "Save generated types to src/types/database.types.ts", status: "todo" },
       { id: "1.8", title: "Create src/dal/product.dal.ts — getActiveProducts(), getProductBySlug(slug), serialize Decimal → string", status: "todo" },
